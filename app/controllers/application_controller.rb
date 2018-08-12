@@ -51,7 +51,6 @@ class ApplicationController < Sinatra::Base
     else
       #User.create(username: params[:username], password: params[:password])
       user = User.find_by(username: params[:username])
-      binding.pry
       if user && user.authenticate(params[:password])
         session[:id] = user.id
         binding.pry
